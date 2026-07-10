@@ -1,30 +1,134 @@
-html, body {
-    background-color: lightblue;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
+/* Reset default browser spacing so margins/padding are predictable */
+* {
+    box-sizing: border-box;
 }
 
+html,
 body {
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #2b2420;
+}
+
+h1, h2, h3 {
+    font-family: "Inknut Antiqua", serif;
+    color: #2b2420;
+}
+
+/* Navigation */
+nav {
+    background-color: #043063;
+    padding: 1rem 2rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: antiquewhite;
+    font-family: "Inknut Antiqua", serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #d4a373;
+}
+
+/* Main content area */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+main h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+main h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top: 0;
+    color: #5c4d3d;
+}
+
+main p {
+    margin-bottom: 1rem;
+}
+
+/* Lists (categories, organizations, projects) */
+main ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+main li {
+    background-color: #fff;
+    border-left: 4px solid #d4a373;
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.75rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+main li img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 0.75rem;
+    border-radius: 50%;
+}
+
+/* Homepage logo image */
+.main-logo {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem 0;
+}
+
+/* Footer */
+footer {
+    max-width: 800px;
+    margin: 2rem auto 0;
+    padding: 1rem 2rem 2rem;
+    font-size: 0.9rem;
+    color: #6b5d4f;
+    border-top: 1px solid #d4c4a8;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
     nav {
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+        padding: 1rem;
+    }
 
-        li {
-            display: inline;
-            margin-right: 15px;
-        }
+    nav ul {
+        gap: 1rem;
+    }
 
-        a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
+    main {
+        padding: 1.5rem 1rem;
+    }
 
-            &:hover {
-                color: #0066cc;
-            }
-        }
+    main h1 {
+        font-size: 2rem;
     }
 }
