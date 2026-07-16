@@ -1,13 +1,17 @@
 <%- include('../partials/header.ejs') %>
-<main>
-    <h1>
-        <%= title %>
-    </h1>
-        <h2>Upcoming Service Projects</h2>
+    <main>
+        <h1>
+            <%= title %>
+        </h1>
+        <p>Here are some of our current service projects:</p>
         <ul>
-            <li>Park Cleanup - Join us to clean up local parks and make them beautiful!</li>
-            <li>Food Drive - Help collect and distribute food to those in need.</li>
-            <li>Community Tutoring - Volunteer to tutor students in various subjects.</li>
+            <% projects.forEach(project=> { %>
+                <li>
+                    <%= new Date(project.project_date).toLocaleDateString() %>: <%= project.title %> (<em>
+                                <%= project.org_name %>
+                            </em>)
+                </li>
+                <% }); %>
         </ul>
-</main>
-<%- include('../partials/footer.ejs') %>
+    </main>
+    <%- include('../partials/footer.ejs') %>

@@ -108,6 +108,16 @@ main li strong {
     width: 100%;
 }
 
+/* Service Projects specific styling */
+main ul li {
+    display: block;
+    line-height: 1.8;
+}
+
+main ul li em {
+    color: #5c4d3d;
+    font-weight: 500;
+}
 /* Homepage logo image */
 .main-logo {
     max-width: 280px;

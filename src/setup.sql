@@ -17,3 +17,51 @@ VALUES
     ('BrightFuture Builders', 'A nonprofit focused on improving community infrastructure through sustainable construction projects.', 'info@brightfuturebuilders.org', 'brightfuture-logo.png'),
     ('GreenHarvest Growers', 'An urban farming collective promoting food sustainability and education in local neighborhoods.', 'contact@greenharvest.org', 'greenharvest-logo.png'),
     ('UnityServe Volunteers', 'A volunteer coordination group supporting local charities and service initiatives.', 'hello@unityserve.org', 'unityserve-logo.png');
+
+-- ========================================
+
+-- Create table: service_project
+
+-- ========================================
+
+CREATE TABLE service_project (
+
+    project_id SERIAL PRIMARY KEY,
+
+    organization_id INTEGER REFERENCES organization(organization_id) NOT NULL,
+
+    title VARCHAR(200) NOT NULL,
+
+    description TEXT NOT NULL,
+
+    location VARCHAR(200) NOT NULL,
+
+project_date DATE NOT NULL
+
+);
+
+-- ========================================
+-- Insert sample data: Service Projects
+-- ========================================
+INSERT INTO service_project (organization_id, title, description, location, project_date)
+VALUES
+    -- BrightFuture Builders (organization_id = 1)
+    (1, 'Community Center Roof Repair', 'Repairing and reinforcing the roof of the downtown community center to prevent water damage.', 'Rexburg, ID', '2026-03-14'),
+    (1, 'Playground Construction', 'Building a new accessible playground for the Riverside neighborhood park.', 'Rexburg, ID', '2026-04-02'),
+    (1, 'Wheelchair Ramp Installation', 'Installing wheelchair ramps for elderly residents in low-income housing.', 'Idaho Falls, ID', '2026-05-10'),
+    (1, 'School Classroom Renovation', 'Renovating three classrooms at a local elementary school damaged by flooding.', 'Rexburg, ID', '2026-06-01'),
+    (1, 'Emergency Shelter Expansion', 'Expanding the capacity of the local emergency shelter ahead of winter.', 'Idaho Falls, ID', '2026-09-15'),
+
+    -- GreenHarvest Growers (organization_id = 2)
+    (2, 'Urban Garden Startup', 'Establishing a new community garden plot in an underused city lot.', 'Boise, ID', '2026-03-20'),
+    (2, 'Composting Workshop Series', 'Hosting a series of workshops teaching households how to compost food waste.', 'Boise, ID', '2026-04-18'),
+    (2, 'School Garden Program', 'Planting and maintaining vegetable gardens at three elementary schools.', 'Nampa, ID', '2026-05-05'),
+    (2, 'Farmers Market Support', 'Coordinating a weekly farmers market to support local small growers.', 'Boise, ID', '2026-06-12'),
+    (2, 'Food Bank Produce Donation Drive', 'Organizing volunteers to grow and donate fresh produce to local food banks.', 'Nampa, ID', '2026-07-30'),
+
+    -- UnityServe Volunteers (organization_id = 3)
+    (3, 'Winter Coat Drive', 'Collecting and distributing winter coats to families in need.', 'Twin Falls, ID', '2026-01-15'),
+    (3, 'Senior Center Visitation Program', 'Organizing regular volunteer visits to reduce isolation among seniors.', 'Twin Falls, ID', '2026-02-20'),
+    (3, 'River Cleanup Day', 'Coordinating volunteers to clean up litter along the Snake River trail.', 'Twin Falls, ID', '2026-04-22'),
+    (3, 'Literacy Tutoring Program', 'Pairing volunteer tutors with adults working to improve reading skills.', 'Jerome, ID', '2026-05-18'),
+    (3, 'Holiday Meal Packing Event', 'Organizing volunteers to pack and deliver holiday meals to families in need.', 'Twin Falls, ID', '2026-11-20');
