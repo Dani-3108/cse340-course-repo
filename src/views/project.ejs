@@ -1,0 +1,23 @@
+<%- include('../partials/header.ejs') %>
+    <main>
+        <h1>
+            <%= title %>
+        </h1>
+        <h2>
+            <%= projectDetails.title %>
+        </h2>
+        
+        <p>Description: <%= projectDetails.description %>
+        </p>
+        <p>Date: <%= projectDetails.project_date %>
+        </p>
+        <p>Location: <%= projectDetails.location %>
+        </p>
+        
+        <p>Partner Organization:
+            <a href="/organization/<%= projectDetails.organization_id %>">
+                <%= projectDetails.org_name %>
+            </a>
+        </p>
+    </main>
+    <%- include('../partials/footer.ejs') %>
