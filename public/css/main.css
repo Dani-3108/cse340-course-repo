@@ -137,6 +137,104 @@ footer {
     border-top: 1px solid #d4c4a8;
 }
 
+/* Forms */
+form {
+    background-color: #fff;
+    border-left: 4px solid #d4a373;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.75rem 2rem;
+    max-width: 500px;
+}
+
+form label {
+    display: block;
+    font-family: "Inknut Antiqua", serif;
+    font-size: 1rem;
+    color: #2b2420;
+    margin-bottom: 0.4rem;
+    margin-top: 1.25rem;
+}
+
+form label:first-of-type {
+    margin-top: 0;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.05rem;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #d4c4a8;
+    border-radius: 4px;
+    background-color: antiquewhite;
+    color: #2b2420;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #d4a373;
+    box-shadow: 0 0 0 2px rgba(212, 163, 115, 0.3);
+}
+
+form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+form button,
+form input[type="submit"] {
+    font-family: "Inknut Antiqua", serif;
+    font-size: 0.95rem;
+    background-color: #043063;
+    color: antiquewhite;
+    border: none;
+    border-radius: 4px;
+    padding: 0.7rem 1.5rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+    background-color: #d4a373;
+    color: #2b2420;
+}
+
+/* Flash message styles */
+.alert {
+    background-color: #fff;
+    border-left: 4px solid #d4a373;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.05rem;
+    color: #2b2420;
+}
+
+.alert.success {
+    border-left-color: #6b8f5c;
+}
+
+.alert.error {
+    border-left-color: #a94442;
+}
+
+.alert.warning {
+    border-left-color: #d4a373;
+}
+
+.alert.info {
+    border-left-color: #043063;
+}
+
 /* Responsive adjustments for mobile */
 @media (max-width: 600px) {
     nav {
