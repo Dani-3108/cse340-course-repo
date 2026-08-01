@@ -10,8 +10,12 @@ import {
     showEditOrganizationForm,
     processEditOrganizationForm
 } from './controllers/organizations.js';
-import { showProjectsPage } from './controllers/projects.js';
-import { showProjectDetailsPage } from './controllers/projects.js';
+import {
+    showProjectsPage,
+    showProjectDetailsPage,
+    showNewProjectForm,
+    processNewProjectForm, projectValidation
+} from './controllers/projects.js';
 import { showCategoriesPage, showCategoryDetailsPage } from './controllers/categories.js';
 import { testErrorPage } from './controllers/errors.js';
 
@@ -23,6 +27,10 @@ router.get('/organizations', showOrganizationsPage);
 router.get('/organization/:id', showOrganizationDetailsPage);
 router.get('/projects', showProjectsPage);
 router.get('/project/:id', showProjectDetailsPage);
+//router for new project page
+router.get('/new-project', showNewProjectForm);
+//router to handlle new project form submission
+router.post('/new-project', projectValidation,processNewProjectForm);
 router.get('/categories', showCategoriesPage);
 // Route for new organization page
 router.get('/new-organization', showNewOrganizationForm);
