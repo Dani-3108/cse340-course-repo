@@ -234,7 +234,11 @@ form input[type="submit"]:hover {
 .alert.info {
     border-left-color: #043063;
 }
-
+main li a+a {
+    margin-left: 1rem;
+    font-size: 0.85rem;
+    color: #5c4d3d;
+}
 /* Responsive adjustments for mobile */
 @media (max-width: 600px) {
     nav {
