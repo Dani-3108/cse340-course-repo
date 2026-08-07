@@ -153,3 +153,11 @@ CREATE TABLE users (
 -- ========================================
 -- Inserting data to users table
 -- ========================================
+-- ========================================
+-- Create table: project_volunteer
+-- ========================================
+CREATE TABLE project_volunteer (
+    project_id INTEGER REFERENCES service_project(project_id) NOT NULL,
+    user_id INTEGER REFERENCES users(user_id) NOT NULL,
+    PRIMARY KEY (project_id, user_id)
+);

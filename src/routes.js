@@ -17,7 +17,9 @@ import {
     processNewProjectForm,
     projectValidation,
     showEditProjectForm,
-    processEditProjectForm
+    processEditProjectForm,
+    processVolunteer,
+    processRemoveVolunteer
 } from './controllers/projects.js';
 import {
     showCategoriesPage,
@@ -52,6 +54,9 @@ router.get('/organizations', showOrganizationsPage);
 router.get('/organization/:id', showOrganizationDetailsPage);
 router.get('/projects', showProjectsPage);
 router.get('/project/:id', showProjectDetailsPage);
+// Routes to handle volunteering for a project
+router.post('/project/:id/volunteer', requireLogin, processVolunteer);
+router.post('/project/:id/remove-volunteer', requireLogin, processRemoveVolunteer);
 //router for new project page
 router.get('/new-project', requireRole('admin'), showNewProjectForm);
 //router to handlle new project form submission
