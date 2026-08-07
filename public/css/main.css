@@ -239,6 +239,60 @@ main li a+a {
     font-size: 0.85rem;
     color: #5c4d3d;
 }
+
+/* Users table (dashboard / all-users page) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-left: 4px solid #d4a373;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 1.5rem 0;
+    overflow: hidden;
+
+    thead {
+        background-color: #043063;
+
+        th {
+            font-family: "Inknut Antiqua", serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            color: antiquewhite;
+            text-align: left;
+            padding: 0.9rem 1.5rem;
+        }
+    }
+
+    tbody {
+        tr:hover {
+            background-color: antiquewhite;
+        }
+
+        td {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.05rem;
+            padding: 0.85rem 1.5rem;
+            border-top: 1px solid #d4c4a8;
+            color: #2b2420;
+        }
+    }
+}
+
+/* Dashboard-specific link styling (e.g. "View All Users") */
+main p a {
+    color: #043063;
+    font-family: "Inknut Antiqua", serif;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a373;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: #d4a373;
+    }
+}
 /* Responsive adjustments for mobile */
 @media (max-width: 600px) {
     nav {

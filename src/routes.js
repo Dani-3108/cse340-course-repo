@@ -39,8 +39,10 @@ import {
     processLogout,
     requireLogin,
     showDashboard,
-    requireRole
+    requireRole,
+    showAllUsers
 } from './controllers/users.js';
+import { getAllUsers } from './models/users.js';
 
 const router = express.Router();
 
@@ -58,8 +60,8 @@ router.get('/edit-project/:id', requireRole('admin'), showEditProjectForm);
 router.post('/edit-project/:id', requireRole('admin'), projectValidation, processEditProjectForm);
 router.get('/categories', showCategoriesPage);
 // Routes to handle the assign categories to project form
-router.get('/assign-categories/:projectId', showAssignCategoriesForm);
-router.post('/assign-categories/:projectId', processAssignCategoriesForm);
+router.get('/assign-categories/:projectId', requireRole('admin'), showAssignCategoriesForm);
+router.post('/assign-categories/:projectId', requireRole('admin'), processAssignCategoriesForm);
 // Route for new organization page
 router.get('/new-organization', requireRole('admin'), showNewOrganizationForm);
 // Route to handle new organization form submission
@@ -83,6 +85,8 @@ router.post('/login', processLoginForm);
 router.get('/logout', processLogout);
 // Protected dashboard route
 router.get('/dashboard', requireLogin, showDashboard);
+// show user table routes
+router.get('/all-users', requireRole('admin'), showAllUsers);
 
 // error-handling routes
 router.get('/test-error', testErrorPage);
